@@ -1,0 +1,49 @@
+version: '3'
+services:
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    volumes:
+      - "./backend/lib:/code/lib"
+      - "./backend/config:/code/config"
+      - "./backend/test:/code/test"
+      - "./backend/priv:/code/priv"
+      - "./backend/assets/css:/code/assets/css"
+      - "./backend/assets/js:/code/assets/js"
+      - "./backend/assets/static:/code/assets/static"
+      - "./uploads:/code/uploads"
+    ports:
+      - 4009:4000
+    tty: true
+    depends_on:
+      - postgres
+    links:
+      - postgres
+    env_file: ./backend/.env
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    volumes:
+      - ./frontend/components:/code/components
+      - ./frontend/lib:/code/lib
+      - ./frontend/static:/code/static
+      - ./frontend/types:/code/types
+    ports:
+      - 3009:3000
+    tty: true
+    depends_on:
+      - backend
+    links:
+      - backend
+    env_file: ./frontend/.env
+
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: password
+    ports:
+      - 5439:5432

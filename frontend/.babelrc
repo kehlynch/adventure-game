@@ -1,0 +1,16 @@
+{
+  "presets": [
+    "next/babel",
+    "flow"
+  ],
+  "plugins": [
+    [
+      "transform-define", "./env-config.js"
+    ],
+    [
+      "inline-import", {
+        "extensions": [".css"]
+      }
+    ]
+  ]
+}

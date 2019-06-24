@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="80" viewBox="7.4 -10 80 95">
+  <g fill="#FFF" fill-rule="evenodd">
+    <g transform="translate(80.889 -.533)">
+      <rect width="7.888" height="3.944" x=".452" y="1.334" rx="1.972" transform="rotate(-22 4.396 3.306)"/>
+      <rect width="7.888" height="3.944" x="4.978" y="19.911" rx="1.972"/>
+    </g>
+    <g transform="matrix(-1 0 0 1 13.689 -.533)">
+      <rect width="7.888" height="3.944" x=".452" y="1.334" rx="1.972" transform="rotate(-22 4.396 3.306)"/>
+      <rect width="7.888" height="3.944" x="4.978" y="19.911" rx="1.972"/>
+    </g>
+  </g>
+</svg>
